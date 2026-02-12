@@ -46,9 +46,7 @@ import { componentRefTagger } from 'vite-plugin-component-ref';
 
 export default defineConfig({
   plugins: [
-    componentRefTagger({
-      editor: 'cursor', // Optional: smart defaults for cursor
-    }),
+    componentRefTagger(),
     react(),
   ],
 });`}
@@ -67,6 +65,7 @@ export default defineConfig({
             key="config"
           >
             <h3 className="text-2xl font-bold mb-6 text-white tracking-tight">Configuration</h3>
+// Update Config table rows
             <div className="rounded-xl border border-white/5 overflow-hidden overflow-x-auto">
               <table className="w-full text-left border-collapse min-w-[500px]">
                 <thead>
@@ -74,6 +73,7 @@ export default defineConfig({
                     <th className="p-4 text-white font-semibold text-sm uppercase tracking-wider">Option</th>
                     <th className="p-4 text-white font-semibold text-sm uppercase tracking-wider">Type</th>
                     <th className="p-4 text-white font-semibold text-sm uppercase tracking-wider">Default</th>
+                    <th className="p-4 text-white font-semibold text-sm uppercase tracking-wider">Description</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5">
@@ -81,16 +81,55 @@ export default defineConfig({
                     <td className="p-4 text-zinc-300 font-mono text-sm">prefix</td>
                     <td className="p-4 text-vite-dim text-sm">string</td>
                     <td className="p-4 text-zinc-400 font-mono text-sm">"data-ref"</td>
+                    <td className="p-4 text-zinc-400 text-sm">Prefix for attributes (e.g. ref-id)</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-4 text-zinc-300 font-mono text-sm">attributes</td>
                     <td className="p-4 text-vite-dim text-sm">string[]</td>
-                    <td className="p-4 text-zinc-400 font-mono text-sm">['id', 'name', ...]</td>
+                    <td className="p-4 text-zinc-400 font-mono text-sm">['id', 'name', 'path'...]</td>
+                    <td className="p-4 text-zinc-400 text-sm">Attributes to inject</td>
+                  </tr>
+                   <tr className="hover:bg-white/5 transition-colors">
+                    <td className="p-4 text-zinc-300 font-mono text-sm">basePath</td>
+                    <td className="p-4 text-vite-dim text-sm">string</td>
+                    <td className="p-4 text-zinc-400 font-mono text-sm">"src"</td>
+                    <td className="p-4 text-zinc-400 text-sm">Base directory for relative paths</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="p-4 text-zinc-300 font-mono text-sm">include</td>
+                    <td className="p-4 text-vite-dim text-sm text-xs">(string | RegExp)[]</td>
+                    <td className="p-4 text-zinc-400 font-mono text-sm">['.tsx', '.jsx']</td>
+                     <td className="p-4 text-zinc-400 text-sm">Files to process</td>
+                  </tr>
+                   <tr className="hover:bg-white/5 transition-colors">
+                    <td className="p-4 text-zinc-300 font-mono text-sm">exclude</td>
+                    <td className="p-4 text-vite-dim text-sm text-xs">(string | RegExp)[]</td>
+                    <td className="p-4 text-zinc-400 font-mono text-sm">['node_modules']</td>
+                     <td className="p-4 text-zinc-400 text-sm">Files to ignore</td>
+                  </tr>
+                   <tr className="hover:bg-white/5 transition-colors">
+                    <td className="p-4 text-zinc-300 font-mono text-sm">enabled</td>
+                    <td className="p-4 text-vite-dim text-sm">boolean</td>
+                    <td className="p-4 text-zinc-400 font-mono text-sm">true</td>
+                     <td className="p-4 text-zinc-400 text-sm">Enable/disable plugin</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-4 text-zinc-300 font-mono text-sm">editor</td>
                     <td className="p-4 text-vite-dim text-sm">string</td>
                     <td className="p-4 text-zinc-400 font-mono text-sm">"code"</td>
+                    <td className="p-4 text-zinc-400 text-sm">Preferred editor (code, cursor, etc)</td>
+                  </tr>
+                   <tr className="hover:bg-white/5 transition-colors">
+                    <td className="p-4 text-zinc-300 font-mono text-sm">shouldTag</td>
+                    <td className="p-4 text-vite-dim text-sm text-xs">(node) =&gt; boolean</td>
+                    <td className="p-4 text-zinc-400 font-mono text-sm">() =&gt; true</td>
+                     <td className="p-4 text-zinc-400 text-sm">Custom filter logic</td>
+                  </tr>
+                   <tr className="hover:bg-white/5 transition-colors">
+                    <td className="p-4 text-zinc-300 font-mono text-sm">openInEditor</td>
+                    <td className="p-4 text-vite-dim text-sm text-xs">(path, line) =&gt; void</td>
+                    <td className="p-4 text-zinc-400 font-mono text-sm">undefined</td>
+                     <td className="p-4 text-zinc-400 text-sm">Custom editor callback</td>
                   </tr>
                 </tbody>
               </table>
@@ -107,16 +146,17 @@ export default defineConfig({
             key="advanced"
           >
             <h3 className="text-2xl font-bold mb-6 text-white tracking-tight">Advanced Usage</h3>
-            <p className="text-vite-dim mb-6">Fine-tune which components get tagged using filters:</p>
+            <p className="text-vite-dim mb-6">Full configuration example with custom logic:</p>
             <div className="bg-[#0e0e10] border border-white/10 rounded-xl overflow-hidden shadow-2xl">
               <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/5 bg-[#141416]">
                 <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                <div className="ml-2 text-xs text-zinc-500 font-mono">vite.config.ts</div>
               </div>
               <div className="p-0 overflow-x-auto">
                 <SyntaxHighlighter
-                  language="javascript"
+                  language="typescript"
                   style={vscDarkPlus}
                   customStyle={{
                     margin: 0,
@@ -128,12 +168,30 @@ export default defineConfig({
                   wrapLines={true}
                 >
 {`componentRefTagger({
-  include: [/\\.tsx$/],
-  exclude: [/node_modules/],
-  shouldTag: (node) => {
-    // Custom logic to determine if 
-    // a node should be tagged
-    return true;
+  // Core Settings
+  prefix: "data-ref",
+  enabled: true,
+  basePath: "src",
+  
+  // Editor Configuration
+  editor: "code", // 'cursor' | 'vscode' | 'webstorm'
+  
+  // File Filtering
+  include: [/\\.tsx$/, /\\.jsx$/],
+  exclude: [/node_modules/, /main\\.tsx$/],
+  
+  // Metadata to Inject
+  attributes: ['id', 'name', 'path', 'line', 'file'],
+
+  // Advanced: Custom Tagging Logic
+  shouldTag: (componentName, filePath) => {
+    // Determine if a component should be tagged based on name or path
+    return !componentName.startsWith('Internal');
+  },
+
+  // Advanced: Custom Editor Handler
+  openInEditor: (filePath, line) => {
+    console.log(\`Opening \${filePath} at line \${line}\`);
   }
 })`}
                 </SyntaxHighlighter>
