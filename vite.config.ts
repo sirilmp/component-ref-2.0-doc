@@ -6,7 +6,8 @@ import { componentRefTagger } from 'vite-plugin-component-ref';
 export default defineConfig({
   plugins: [
     componentRefTagger({
-      editor: 'antigravity', // Automatically handles line-positioning flags\
+      editor: 'antigravity', // Automatically handles line-positioning flags
+      include: [/\.tsx?$/],
     }),
     react()
   ],
