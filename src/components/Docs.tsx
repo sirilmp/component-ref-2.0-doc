@@ -235,6 +235,28 @@ export default defineConfig({
                 </SyntaxHighlighter>
               </div>
             </div>
+
+            <h3 className="text-xl font-bold mb-4 mt-12 text-white tracking-tight">Team Collaboration (Environment Overrides)</h3>
+            <p className="text-vite-dim mb-6">Developers can override the project-wide editor setting by adding a variable to their <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-yellow-200">.env.local</code> or <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-yellow-200">.env</code>:</p>
+            
+            <div className="bg-[#0e0e10] border border-white/10 rounded-xl overflow-hidden shadow-2xl">
+              <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/5 bg-[#141416]">
+                <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                <div className="ml-2 text-xs text-zinc-500 font-mono">.env.local</div>
+              </div>
+              <div className="p-6 overflow-x-auto">
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
+                >
+{`# .env.local or .env
+COMPONENT_REF_EDITOR=cursor`}
+                </SyntaxHighlighter>
+              </div>
+            </div>
           </motion.div>
         );
     }
