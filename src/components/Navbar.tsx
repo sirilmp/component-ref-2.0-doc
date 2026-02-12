@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Github, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 interface NavbarProps {
   scrolled: boolean;
@@ -63,6 +64,12 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
                 {item}
               </button>
             ))}
+            <Link 
+              to="/changelog"
+              className="px-4 py-2 rounded-full text-vite-dim hover:text-white hover:bg-white/5 transition-all duration-200 font-medium text-sm no-underline"
+            >
+              Changelog
+            </Link>
             
             <div className="w-px h-4 bg-white/10 mx-2"></div>
             
@@ -158,6 +165,22 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
                   </span>
                 </motion.button>
               ))}
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.25 }}
+              >
+                <Link 
+                  to="/changelog"
+                  onClick={() => setIsOpen(false)}
+                  className="p-4 text-left rounded-xl text-white hover:bg-white/10 transition-all duration-200 font-semibold text-lg flex justify-between items-center no-underline block"
+                >
+                  Changelog
+                  <span className="bg-white/10 p-1 rounded-full text-xs text-vite-dim">
+                    ➜
+                  </span>
+                </Link>
+              </motion.div>
               
               <div className="h-px bg-white/10 my-2"></div>
               
