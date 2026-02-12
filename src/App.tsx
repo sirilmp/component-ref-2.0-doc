@@ -9,7 +9,6 @@ import {
   ArrowRight, 
   Copy, 
   Check,
-  ChevronRight,
   Github,
   Award,
   Lightbulb
@@ -17,7 +16,15 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 
-const FeatureCard = ({ icon: Icon, title, description, delay }: any) => (
+
+interface FeatureCardProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  delay: number;
+}
+
+const FeatureCard = ({ icon: Icon, title, description, delay }: FeatureCardProps) => (
   <motion.div 
     className="feature-card"
     initial={{ opacity: 0, y: 30 }}
@@ -144,7 +151,7 @@ export default defineConfig({
             <p>Fine-tune which components get tagged using filters:</p>
             <pre className="code-block">
 {`componentRefTagger({
-  include: [/\.tsx$/],
+  include: [/\\.tsx$/],
   exclude: [/node_modules/],
   shouldTag: (node) => {
     // Custom logic to determine if 
