@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { Award, ShieldCheck, Users, Zap } from 'lucide-react';
+import { MousePointerClick, Layers, Feather, SlidersHorizontal } from 'lucide-react';
 
 const WhySection = () => {
   return (
@@ -8,7 +8,7 @@ const WhySection = () => {
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="text-center mb-16 md:mb-20">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 animate-fade-in tracking-tight text-white">
-            Why this instead of <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Lovable Tagger</span>?
+            Why Choose This?
           </h2>
           <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto">Built for developers who demand performance, control, and zero friction.</p>
         </div>
@@ -16,30 +16,30 @@ const WhySection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              icon: Award,
-              title: "Zero Heavy Dependencies",
-              desc: "Unlike Lovable Tagger which can pull in heavy overhead, our plugin is ultra-lightweight, relying only on small Babel utilities to transform your code.",
-              color: "text-vite-purple",
-              bg: "group-hover:bg-vite-purple/20"
-            },
-            {
-              icon: ShieldCheck,
-              title: "Production Safe",
-              desc: "Zero-config protection. The plugin automatically disables itself in production builds, ensuring no reference attributes ever leak into your final bundle.",
+              icon: MousePointerClick,
+              title: 'Instant "Click-to-Code" Navigation',
+              desc: "Stop hunting through file trees. Hold Alt and click any element in your browser to instantly open its source file in your IDE (VS Code, Cursor, etc.) at the exact line of code. It dramatically speeds up your UI debugging and editing workflow.",
               color: "text-cyan-400",
               bg: "group-hover:bg-cyan-400/20"
             },
             {
-              icon: Users,
-              title: "Team-Centric Workflow",
-              desc: "The only plugin with built-in .env.local overrides. Every developer on your team can use their own editor (VS Code, Cursor, Antigravity) without changing a single line of config.",
-              color: "text-pink-500",
-              bg: "group-hover:bg-pink-500/20"
+              icon: Layers,
+              title: "Rich Component Context in DOM",
+              desc: 'Understand your component tree at a glance. The plugin automatically annotates your DOM elements with meaningful attributes like data-ref-component="Button", data-ref-file="Header.tsx", and data-ref-line="42". This makes inspecting the Elements panel in DevTools far more useful.',
+              color: "text-vite-purple",
+              bg: "group-hover:bg-vite-purple/20"
             },
             {
-              icon: Zap,
-              title: "Smart IDE Detection",
-              desc: "Stop manually configuring line-positioning flags. We automatically detect editors like Cursor and Antigravity and apply the correct positioning flags for you.",
+              icon: Feather,
+              title: "Zero Production Footprint",
+              desc: "Dev-only magic, production-ready performance. All tagging and event listeners are automatically stripped out during the production build. Your deployed application remains 100% clean, with absolutely no bundle size increase or runtime overhead.",
+              color: "text-emerald-400",
+              bg: "group-hover:bg-emerald-400/20"
+            },
+            {
+              icon: SlidersHorizontal,
+              title: "Fully Configurable & Flexible",
+              desc: "Works the way you work. Whether you need to change the attribute prefix, exclude specific directories, or support a custom editor setup, the plugin is fully customizable via simple options in your vite.config.ts.",
               color: "text-amber-400",
               bg: "group-hover:bg-amber-400/20"
             }
@@ -61,8 +61,8 @@ const WhySection = () => {
                 <div>
                   <h3 className="text-lg font-bold leading-tight mb-3 text-zinc-100">{item.title}</h3>
                   <p className="text-zinc-400 text-sm leading-relaxed">
-                    {item.desc.split(/(\.env\.local|Cursor|Antigravity)/g).map((part, i) => 
-                      ['.env.local', 'Cursor', 'Antigravity'].includes(part) ? <strong key={i} className="text-zinc-200 font-medium">{part}</strong> : part
+                    {item.desc.split(/(vite\.config\.ts|Alt|VS Code|Cursor|Elements|DevTools)/g).map((part, i) => 
+                      ['vite.config.ts', 'Alt', 'VS Code', 'Cursor', 'Elements', 'DevTools'].includes(part) ? <strong key={i} className="text-zinc-200 font-medium">{part}</strong> : part
                     )}
                   </p>
                 </div>
