@@ -1,13 +1,15 @@
 
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhySection from './components/WhySection';
 import Features from './components/Features';
 import Docs from './components/Docs';
 import Footer from './components/Footer';
+import Changelog from './pages/Changelog';
 
-function App() {
+function HomePage() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -47,6 +49,17 @@ function App() {
 
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/changelog" element={<Changelog />} />
+      </Routes>
+    </Router>
   );
 }
 
