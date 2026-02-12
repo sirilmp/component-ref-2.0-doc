@@ -1,8 +1,9 @@
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Terminal, Check, Copy, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import changelogData from '../data/changelogs.json';
 
 interface HeroProps {
   scrollToSection: (id: string) => void;
@@ -11,6 +12,14 @@ interface HeroProps {
 const Hero = ({ scrollToSection }: HeroProps) => {
   const [copied, setCopied] = useState(false);
   const [packageManager, setPackageManager] = useState('npm');
+  const [clickedAltClick, setClickedAltClick] = useState(false);
+
+  const latestVersion = changelogData[0]?.version || '1.0.1';
+
+  const handleAltClickDemo = () => {
+    setClickedAltClick(true);
+    setTimeout(() => setClickedAltClick(false), 600);
+  };
   
   const packageManagers = {
     npm: 'npm install vite-plugin-component-ref --save-dev',
@@ -51,7 +60,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
             >
               <span className="bg-white text-black px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider">New</span>
               <span className="text-zinc-400 group-hover:text-zinc-200 transition-colors flex items-center gap-1">
-                v1.0.1 is available <ChevronRight size={14} className="text-zinc-600 group-hover:text-zinc-400" />
+                v{latestVersion} is available <ChevronRight size={14} className="text-zinc-600 group-hover:text-zinc-400" />
               </span>
             </Link>
           </motion.div>
@@ -67,7 +76,12 @@ const Hero = ({ scrollToSection }: HeroProps) => {
           
           <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed px-4 font-normal tracking-wide">
             A powerful Vite plugin that automatically tags React components, enabling seamless 
-            <span className="mx-1.5 align-baseline inline-flex items-center justify-center px-2 py-0.5 rounded-md bg-zinc-800 border-b-2 border-zinc-700 text-zinc-200 font-mono text-sm shadow-sm select-none">Alt + Click</span> 
+            <span 
+              onClick={handleAltClickDemo}
+              className="mx-1.5 align-baseline inline-flex items-center justify-center px-2 py-0.5 rounded-md bg-zinc-800 border-b-2 border-zinc-700 text-zinc-200 font-mono text-sm shadow-sm cursor-pointer hover:bg-zinc-700 hover:border-zinc-600 transition-all active:scale-95 outline-none"
+            >
+              Alt + Click
+            </span>
             navigation directly to your source code.
           </p>
           

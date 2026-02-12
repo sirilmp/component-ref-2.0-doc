@@ -242,21 +242,13 @@ export default defineConfig({
       prefix: "data-ref",
       enabled: true,
       basePath: "src",
-
-    
       editor: "code", // 'cursor' | 'vscode' | 'webstorm'
-
-   
-      include: [/\\.tsx$/, /\\.jsx$/],
-      exclude: [/node_modules/, /main\\.tsx$/],
-
-     
+      include: [".tsx", ".jsx"],
+      exclude: ["node_modules", "main.tsx"],
       attributes: ['id', 'name', 'path', 'line', 'file'],
-
       shouldTag: (componentName, filePath) => {
         return !componentName.startsWith('Internal');
       },
-
       openInEditor: (filePath, line) => {
         console.log(\`Opening \${filePath} at line \${line}\`);
       }
@@ -296,8 +288,7 @@ export default defineConfig({
                   style={vscDarkPlus}
                   customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                 >
-{`# .env.local or .env
-COMPONENT_REF_EDITOR=cursor`}
+{`COMPONENT_REF_EDITOR=cursor`}
                 </SyntaxHighlighter>
               </div>
             </div>
