@@ -62,45 +62,6 @@ const Hero = ({ scrollToSection }: HeroProps) => {
               <span className="font-mono text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-xl border border-cyan-400/20 inline-block transform -rotate-1">Browser</span>
               {' '}and{' '}
               <span className="font-mono text-violet-400 bg-violet-400/10 px-3 py-1 rounded-xl border border-violet-400/20 inline-block transform rotate-1">IDE</span>
-              
-              {/* Arrow flowing beneath — hidden on mobile */}
-              <motion.svg
-                viewBox="0 0 400 60"
-                fill="none"
-                className="hidden md:block absolute -bottom-6 left-0 w-full h-[60px] pointer-events-none"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-              >
-                <defs>
-                  <linearGradient id="arrowGradientBelow" x1="0" y1="30" x2="400" y2="30">
-                    <stop stopColor="#67e8f9" />
-                    <stop offset="1" stopColor="#a78bfa" />
-                  </linearGradient>
-                  <marker
-                    id="arrowHeadBelow"
-                    markerWidth="12"
-                    markerHeight="10"
-                    refX="10"
-                    refY="5"
-                    orient="auto"
-                    markerUnits="userSpaceOnUse"
-                  >
-                    <polygon points="0,0 12,5 0,10" fill="#a78bfa" />
-                  </marker>
-                </defs>
-                <motion.path
-                  d="M30 10 C100 55, 300 55, 370 10"
-                  stroke="url(#arrowGradientBelow)"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  fill="none"
-                  markerEnd="url(#arrowHeadBelow)"
-                  initial={{ pathLength: 0, opacity: 0 }}
-                  animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{ delay: 0.8, duration: 1.4, ease: "easeInOut" }}
-                />
-              </motion.svg>
             </span>
           </h1>
           

@@ -49,9 +49,6 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
             <span className="text-zinc-100 font-bold tracking-tight text-sm md:text-base hidden xs:block">
               component-ref-tagger
             </span>
-            <span className="text-zinc-100 font-bold tracking-tight text-sm md:text-base xs:hidden">
-              CRT
-            </span>
           </div>
 
           <div className="hidden md:flex items-center gap-1">
@@ -70,9 +67,10 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
             >
               Changelog
             </Link>
-            
-            <div className="w-px h-4 bg-white/10 mx-2"></div>
-            
+          </div>
+
+          {/* Icon links — visible on all screen sizes */}
+          <div className="flex items-center gap-1">
             <a 
               href="https://www.npmjs.com/package/vite-plugin-component-ref" 
               target="_blank" 

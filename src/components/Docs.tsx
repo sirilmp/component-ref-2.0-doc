@@ -192,47 +192,91 @@ export default defineConfig({
                 <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
                 <div className="ml-2 text-xs text-zinc-500 font-mono">vite.config.ts</div>
               </div>
-              <div className="p-0 overflow-x-auto">
-                <SyntaxHighlighter
-                  language="typescript"
-                  style={vscDarkPlus}
-                  customStyle={{
-                    margin: 0,
-                    padding: '1.5rem',
-                    background: 'transparent',
-                    fontSize: '0.875rem',
-                    lineHeight: '1.6',
-                  }}
-                  wrapLines={true}
-                >
-{`componentRefTagger({
-  // Core Settings
-  prefix: "data-ref",
-  enabled: true,
-  basePath: "src",
-  
-  // Editor Configuration
-  editor: "code", // 'cursor' | 'vscode' | 'webstorm'
-  
-  // File Filtering
-  include: [/\\.tsx$/, /\\.jsx$/],
-  exclude: [/node_modules/, /main\\.tsx$/],
-  
-  // Metadata to Inject
-  attributes: ['id', 'name', 'path', 'line', 'file'],
+              <div className="p-6 overflow-x-auto group text-[0.875rem] leading-[1.6]">
+                <div className="min-w-max">
+                  {/* Chunk 1: Vite/React imports (Dim) */}
+                  <div className="opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+                    <SyntaxHighlighter
+                      language="typescript"
+                      style={vscDarkPlus}
+                      customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
+                    >
+{`import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';`}
+                    </SyntaxHighlighter>
+                  </div>
 
-  // Advanced: Custom Tagging Logic
-  shouldTag: (componentName, filePath) => {
-    // Determine if a component should be tagged based on name or path
-    return !componentName.startsWith('Internal');
-  },
+                  {/* Chunk 2: Plugin Import (Highlight) */}
+                  <div className="font-bold relative z-10">
+                    <SyntaxHighlighter
+                      language="typescript"
+                      style={vscDarkPlus}
+                      customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
+                    >
+{`import { componentRefTagger } from 'vite-plugin-component-ref';`}
+                    </SyntaxHighlighter>
+                  </div>
 
-  // Advanced: Custom Editor Handler
-  openInEditor: (filePath, line) => {
-    console.log(\`Opening \${filePath} at line \${line}\`);
-  }
-})`}
-                </SyntaxHighlighter>
+                  {/* Chunk 3: defineConfig open (Dim) */}
+                  <div className="opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+                    <SyntaxHighlighter
+                      language="typescript"
+                      style={vscDarkPlus}
+                      customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
+                    >
+{`
+export default defineConfig({
+  plugins: [`}
+                    </SyntaxHighlighter>
+                  </div>
+
+                  {/* Chunk 4: componentRefTagger config (Highlight) */}
+                  <div className="font-bold relative z-10">
+                    <SyntaxHighlighter
+                      language="typescript"
+                      style={vscDarkPlus}
+                      customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
+                    >
+{`    componentRefTagger({
+   
+      prefix: "data-ref",
+      enabled: true,
+      basePath: "src",
+
+    
+      editor: "code", // 'cursor' | 'vscode' | 'webstorm'
+
+   
+      include: [/\\.tsx$/, /\\.jsx$/],
+      exclude: [/node_modules/, /main\\.tsx$/],
+
+     
+      attributes: ['id', 'name', 'path', 'line', 'file'],
+
+      shouldTag: (componentName, filePath) => {
+        return !componentName.startsWith('Internal');
+      },
+
+      openInEditor: (filePath, line) => {
+        console.log(\`Opening \${filePath} at line \${line}\`);
+      }
+    }),`}
+                    </SyntaxHighlighter>
+                  </div>
+
+                  {/* Chunk 5: react() and close (Dim) */}
+                  <div className="opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+                    <SyntaxHighlighter
+                      language="typescript"
+                      style={vscDarkPlus}
+                      customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
+                    >
+{`    react(),
+  ],
+});`}
+                    </SyntaxHighlighter>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>

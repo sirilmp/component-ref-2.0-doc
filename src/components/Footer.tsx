@@ -1,4 +1,6 @@
 
+import { Heart } from 'lucide-react';
+
 const Footer = () => {
   return (
     <footer className="py-12 border-t border-white/5 mt-auto bg-black/20 backdrop-blur-sm">
@@ -11,6 +13,9 @@ const Footer = () => {
             component-ref-tagger
           </span>
         </div>
+        <p className="text-zinc-600 text-sm flex items-center gap-1">
+          Made with <Heart size={14} className="text-red-500 fill-red-500 inline-block" /> from Kerala
+        </p>
         <p className="text-zinc-600 text-sm">
           MIT License © 2026 <a href="https://www.sirilmp.com/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">sirilmp.com</a>
         </p>
