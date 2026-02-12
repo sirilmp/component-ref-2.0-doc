@@ -11,7 +11,9 @@ const Footer = () => {
             component-ref-tagger
           </span>
         </div>
-        <p className="text-zinc-600 text-sm">MIT License © 2026 SIRILMP</p>
+        <p className="text-zinc-600 text-sm">
+          MIT License © 2026 <a href="https://www.sirilmp.com/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">sirilmp.com</a>
+        </p>
       </div>
     </footer>
   );
