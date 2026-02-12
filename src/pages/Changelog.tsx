@@ -2,6 +2,8 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft, Package, GitCommit, Sparkles, Bug, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import changelogData from '../data/changelogs.json';
+import Footer from '../components/Footer';
 
 interface ChangeEntry {
   type: 'added' | 'fixed' | 'changed' | 'improved';
@@ -15,33 +17,7 @@ interface ChangelogVersion {
   entries: ChangeEntry[];
 }
 
-const changelog: ChangelogVersion[] = [
-  {
-    version: '1.0.1',
-    date: 'February 12, 2026',
-    tag: 'Latest',
-    entries: [
-      { type: 'changed', text: 'Moved vite to peerDependencies for better compatibility with Vite 5 and 6' },
-      { type: 'improved', text: 'Reduced package bundle size by removing vite from direct dependencies' },
-      { type: 'fixed', text: 'Resolved potential version conflicts when used alongside different Vite versions' },
-    ],
-  },
-  {
-    version: '1.0.0',
-    date: 'February 12, 2026',
-    tag: 'Initial Release',
-    entries: [
-      { type: 'added', text: 'Automatic component tagging with source reference attributes' },
-      { type: 'added', text: 'Alt + Click to open source files in your IDE' },
-      { type: 'added', text: 'Built-in support for VS Code, Cursor, and WebStorm editors' },
-      { type: 'added', text: 'Configurable prefix, attributes, and file filtering' },
-      { type: 'added', text: 'Custom shouldTag filter for selective component tagging' },
-      { type: 'added', text: 'Custom openInEditor callback for advanced editor integration' },
-      { type: 'added', text: 'Environment variable overrides for team collaboration' },
-      { type: 'added', text: 'Auto-disable in production builds for clean bundles' },
-    ],
-  },
-];
+const changelog = changelogData as ChangelogVersion[];
 
 const typeConfig = {
   added: { icon: Sparkles, color: 'text-emerald-400', bg: 'bg-emerald-400/10', border: 'border-emerald-400/20', label: 'Added' },
@@ -56,14 +32,14 @@ const Changelog = () => {
       {/* Top Navigation */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-zinc-950/80 border-b border-white/5">
         <div className="max-w-[900px] mx-auto px-6 py-4 flex items-center justify-between">
-          <Link 
+          <Link
             to="/"
             className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors group no-underline"
           >
             <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
             <span className="text-sm font-medium">Back to Home</span>
           </Link>
-          <a 
+          <a
             href="https://www.npmjs.com/package/vite-plugin-component-ref"
             target="_blank"
             rel="noopener noreferrer"
@@ -121,11 +97,10 @@ const Changelog = () => {
                     v{release.version}
                   </h2>
                   {release.tag && (
-                    <span className={`text-xs font-semibold px-3 py-1 rounded-full border ${
-                      release.tag === 'Latest' 
-                        ? 'bg-emerald-400/10 text-emerald-400 border-emerald-400/20' 
-                        : 'bg-white/5 text-zinc-400 border-white/10'
-                    }`}>
+                    <span className={`text-xs font-semibold px-3 py-1 rounded-full border ${release.tag === 'Latest'
+                      ? 'bg-emerald-400/10 text-emerald-400 border-emerald-400/20'
+                      : 'bg-white/5 text-zinc-400 border-white/10'
+                      }`}>
                       {release.tag}
                     </span>
                   )}
@@ -165,26 +140,7 @@ const Changelog = () => {
           ))}
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-white/5 py-8">
-        <div className="max-w-[900px] mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-zinc-600 text-sm">
-            MIT License © 2026{' '}
-            <a href="https://www.sirilmp.com/" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors no-underline">
-              sirilmp.com
-            </a>
-          </p>
-          <a 
-            href="https://www.npmjs.com/package/vite-plugin-component-ref"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-600 hover:text-white text-sm transition-colors no-underline"
-          >
-            View on npm →
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

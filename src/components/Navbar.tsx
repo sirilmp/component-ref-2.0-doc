@@ -68,7 +68,7 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
           </div>
 
           {/* Icon links — visible on all screen sizes */}
-          {/* <div className="flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-1">
             <a 
               href="https://www.npmjs.com/package/vite-plugin-component-ref" 
               target="_blank" 
@@ -85,14 +85,14 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
             </a>
             
             <a 
-              href="https://github.com/sirilmp/component-referrance-tagger" 
+              href="https://github.com/sirilmp/vite-plugin-component-ref-2.0" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-vite-dim hover:text-white transition-colors p-2"
             >
               <Github size={20} />
             </a>
-          </div> */}
+          </div>
 
           {/* Double-line Hamburger Button */}
           <button 
@@ -195,7 +195,7 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
                 <span>npm</span>
               </a>
               <a 
-                href="https://github.com/sirilmp/component-referrance-tagger" 
+                href="https://github.com/sirilmp/vite-plugin-component-ref-2.0r" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-4 text-left rounded-xl text-white hover:bg-white/10 transition-all duration-200 font-semibold text-lg flex items-center gap-3 no-underline"

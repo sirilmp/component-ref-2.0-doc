@@ -7,9 +7,12 @@ interface FeatureCardProps {
   title: React.ReactNode;
   description: React.ReactNode;
   delay: number;
+  spotlightColor?: string;
+  iconColor?: string;
+  iconBg?: string;
 }
 
-const FeatureCard = ({ icon: Icon, title, description, delay }: FeatureCardProps) => {
+const FeatureCard = ({ icon: Icon, title, description, delay, spotlightColor = 'rgba(189, 52, 254, 0.1)', iconColor = 'text-vite-purple', iconBg = 'group-hover:bg-vite-purple group-hover:border-vite-purple' }: FeatureCardProps) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -51,20 +54,20 @@ const FeatureCard = ({ icon: Icon, title, description, delay }: FeatureCardProps
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(189, 52, 254, 0.1), transparent 40%)`
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`
         }}
       />
       <div 
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(189, 52, 254, 0.4), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor.replace('0.1', '0.4')}, transparent 40%)`,
           maskImage: `radial-gradient(100% 100% at ${position.x}px ${position.y}px, black, transparent)`
         }}
       />
 
       <div className="relative z-10">
-        <div className="w-14 h-14 mx-auto mb-6 bg-zinc-800 text-white flex items-center justify-center rounded-xl border border-white/5 group-hover:scale-110 group-hover:bg-vite-purple group-hover:border-vite-purple transition-all duration-300 shadow-xl">
+        <div className={`w-14 h-14 mx-auto mb-6 bg-zinc-800 text-white flex items-center justify-center rounded-xl border border-white/5 group-hover:scale-110 ${iconBg} transition-all duration-300 shadow-xl ${iconColor}`}>
           <Icon size={24} />
         </div>
         <h3 className="text-xl font-semibold mb-3 text-zinc-100">{title}</h3>
