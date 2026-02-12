@@ -43,9 +43,7 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-vite-blue to-vite-purple text-white flex items-center justify-center rounded-lg text-sm shadow-lg shadow-vite-purple/20">
-              C
-            </div>
+            <img src="/logo.png" alt="component-ref-tagger" className="w-8 h-8 rounded-lg" />
             <span className="text-zinc-100 font-bold tracking-tight text-sm md:text-base hidden xs:block">
               component-ref-tagger
             </span>
@@ -70,7 +68,7 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
           </div>
 
           {/* Icon links — visible on all screen sizes */}
-          <div className="flex items-center gap-1">
+          {/* <div className="flex items-center gap-1">
             <a 
               href="https://www.npmjs.com/package/vite-plugin-component-ref" 
               target="_blank" 
@@ -94,7 +92,7 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
             >
               <Github size={20} />
             </a>
-          </div>
+          </div> */}
 
           {/* Double-line Hamburger Button */}
           <button 
@@ -182,6 +180,20 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
               
               <div className="h-px bg-white/10 my-2"></div>
               
+              <a 
+                href="https://www.npmjs.com/package/vite-plugin-component-ref" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-4 text-left rounded-xl text-white hover:bg-white/10 transition-all duration-200 font-semibold text-lg flex items-center gap-3 no-underline"
+              >
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-package">
+                  <path d="m16.5 9.4-9-5.19"></path>
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+                <span>npm</span>
+              </a>
               <a 
                 href="https://github.com/sirilmp/component-referrance-tagger" 
                 target="_blank" 

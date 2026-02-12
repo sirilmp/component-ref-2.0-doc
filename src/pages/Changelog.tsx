@@ -84,9 +84,7 @@ const Changelog = () => {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-vite-blue to-vite-purple text-white flex items-center justify-center rounded-xl text-sm font-bold shadow-lg shadow-vite-purple/20">
-              C
-            </div>
+            <img src="/logo.png" alt="component-ref-tagger" className="w-10 h-10 rounded-xl" />
             <span className="text-zinc-500 text-sm font-mono">vite-plugin-component-ref</span>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-white mb-4">
