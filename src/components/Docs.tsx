@@ -27,30 +27,68 @@ const Docs = () => {
                 <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
                 <div className="ml-2 text-xs text-zinc-500 font-mono">vite.config.ts</div>
               </div>
-              <div className="p-0 overflow-x-auto">
-                <SyntaxHighlighter
-                  language="typescript"
-                  style={vscDarkPlus}
-                  customStyle={{
-                    margin: 0,
-                    padding: '1.5rem',
-                    background: 'transparent',
-                    fontSize: '0.875rem',
-                    lineHeight: '1.6',
-                  }}
-                  wrapLines={true}
-                >
+              <div className="p-6 overflow-x-auto group text-[0.875rem] leading-[1.6]">
+                <div className="min-w-max">
+                  {/* Chunk 1: Imports (Dim) */}
+                  <div className="opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+                    <SyntaxHighlighter
+                      language="typescript"
+                      style={vscDarkPlus}
+                      customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
+                    >
 {`import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import { componentRefTagger } from 'vite-plugin-component-ref';
+import react from '@vitejs/plugin-react';`}
+                    </SyntaxHighlighter>
+                  </div>
 
+                  {/* Chunk 2: Plugin Import (Highlight) */}
+                  <div className="font-bold relative z-10">
+                    <SyntaxHighlighter
+                      language="typescript"
+                      style={vscDarkPlus}
+                      customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
+                    >
+{`import { componentRefTagger } from 'vite-plugin-component-ref';`}
+                    </SyntaxHighlighter>
+                  </div>
+
+                  {/* Chunk 3: Config Start (Dim) */}
+                  <div className="opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+                    <SyntaxHighlighter
+                      language="typescript"
+                      style={vscDarkPlus}
+                      customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
+                    >
+{`
 export default defineConfig({
-  plugins: [
-    componentRefTagger(),
-    react(),
+  plugins: [`}
+                    </SyntaxHighlighter>
+                  </div>
+
+                  {/* Chunk 4: Plugin Usage (Highlight) */}
+                  <div className="font-bold relative z-10">
+                    <SyntaxHighlighter
+                      language="typescript"
+                      style={vscDarkPlus}
+                      customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
+                    >
+{`    componentRefTagger(),`}
+                    </SyntaxHighlighter>
+                  </div>
+
+                  {/* Chunk 5: Config End (Dim) */}
+                  <div className="opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+                    <SyntaxHighlighter
+                      language="typescript"
+                      style={vscDarkPlus}
+                      customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
+                    >
+{`    react(),
   ],
 });`}
-                </SyntaxHighlighter>
+                    </SyntaxHighlighter>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -65,7 +103,7 @@ export default defineConfig({
             key="config"
           >
             <h3 className="text-2xl font-bold mb-6 text-white tracking-tight">Configuration</h3>
-// Update Config table rows
+{/* // Update Config table rows */}
             <div className="rounded-xl border border-white/5 overflow-hidden overflow-x-auto">
               <table className="w-full text-left border-collapse min-w-[500px]">
                 <thead>
