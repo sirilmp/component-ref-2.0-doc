@@ -7,11 +7,32 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 const Docs = () => {
   const [activeTab, setActiveTab] = useState('Setup');
 
+  const tabColors: Record<string, { text: string; bg: string; dot: string; glow: string }> = {
+    Setup: {
+      text: 'text-vite-purple',
+      bg: 'bg-vite-purple/10',
+      dot: 'bg-vite-purple',
+      glow: 'rgba(189,52,254,0.5)'
+    },
+    Config: {
+      text: 'text-cyan-400',
+      bg: 'bg-cyan-400/10',
+      dot: 'bg-cyan-400',
+      glow: 'rgba(34,211,238,0.5)'
+    },
+    Advanced: {
+      text: 'text-emerald-400',
+      bg: 'bg-emerald-400/10',
+      dot: 'bg-emerald-400',
+      glow: 'rgba(52,211,153,0.5)'
+    },
+  };
+
   const renderDocsContent = () => {
     switch (activeTab) {
       case 'Setup':
         return (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
@@ -36,7 +57,7 @@ const Docs = () => {
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-{`import { defineConfig } from 'vite';
+                      {`import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';`}
                     </SyntaxHighlighter>
                   </div>
@@ -48,7 +69,7 @@ import react from '@vitejs/plugin-react';`}
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-{`import { componentRefTagger } from 'vite-plugin-component-ref';`}
+                      {`import { componentRefTagger } from 'vite-plugin-component-ref';`}
                     </SyntaxHighlighter>
                   </div>
 
@@ -59,12 +80,11 @@ import react from '@vitejs/plugin-react';`}
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-{`
+                      {`
 export default defineConfig({
   plugins: [`}
                     </SyntaxHighlighter>
                   </div>
-
                   {/* Chunk 4: Plugin Usage (Highlight) */}
                   <div className="font-bold relative z-10">
                     <SyntaxHighlighter
@@ -72,7 +92,7 @@ export default defineConfig({
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-{`    componentRefTagger(),`}
+                      {`    componentRefTagger(),`}
                     </SyntaxHighlighter>
                   </div>
 
@@ -83,7 +103,7 @@ export default defineConfig({
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-{`    react(),
+                      {`    react(),
   ],
 });`}
                     </SyntaxHighlighter>
@@ -95,7 +115,7 @@ export default defineConfig({
         );
       case 'Config':
         return (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
@@ -103,7 +123,7 @@ export default defineConfig({
             key="config"
           >
             <h3 className="text-2xl font-bold mb-6 text-white tracking-tight">Configuration</h3>
-{/* // Update Config table rows */}
+            {/* // Update Config table rows */}
             <div className="rounded-xl border border-white/5 overflow-hidden overflow-x-auto">
               <table className="w-full text-left border-collapse min-w-[500px]">
                 <thead>
@@ -127,7 +147,7 @@ export default defineConfig({
                     <td className="p-4 text-zinc-400 font-mono text-sm">['id', 'name', 'path'...]</td>
                     <td className="p-4 text-zinc-400 text-sm">Attributes to inject</td>
                   </tr>
-                   <tr className="hover:bg-white/5 transition-colors">
+                  <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-4 text-zinc-300 font-mono text-sm">basePath</td>
                     <td className="p-4 text-vite-dim text-sm">string</td>
                     <td className="p-4 text-zinc-400 font-mono text-sm">"src"</td>
@@ -137,19 +157,19 @@ export default defineConfig({
                     <td className="p-4 text-zinc-300 font-mono text-sm">include</td>
                     <td className="p-4 text-vite-dim text-sm text-xs">(string | RegExp)[]</td>
                     <td className="p-4 text-zinc-400 font-mono text-sm">['.tsx', '.jsx']</td>
-                     <td className="p-4 text-zinc-400 text-sm">Files to process</td>
+                    <td className="p-4 text-zinc-400 text-sm">Files to process</td>
                   </tr>
-                   <tr className="hover:bg-white/5 transition-colors">
+                  <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-4 text-zinc-300 font-mono text-sm">exclude</td>
                     <td className="p-4 text-vite-dim text-sm text-xs">(string | RegExp)[]</td>
                     <td className="p-4 text-zinc-400 font-mono text-sm">['node_modules']</td>
-                     <td className="p-4 text-zinc-400 text-sm">Files to ignore</td>
+                    <td className="p-4 text-zinc-400 text-sm">Files to ignore</td>
                   </tr>
-                   <tr className="hover:bg-white/5 transition-colors">
+                  <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-4 text-zinc-300 font-mono text-sm">enabled</td>
                     <td className="p-4 text-vite-dim text-sm">boolean</td>
                     <td className="p-4 text-zinc-400 font-mono text-sm">true</td>
-                     <td className="p-4 text-zinc-400 text-sm">Enable/disable plugin</td>
+                    <td className="p-4 text-zinc-400 text-sm">Enable/disable plugin</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-4 text-zinc-300 font-mono text-sm">editor</td>
@@ -157,17 +177,17 @@ export default defineConfig({
                     <td className="p-4 text-zinc-400 font-mono text-sm">"code"</td>
                     <td className="p-4 text-zinc-400 text-sm">Preferred editor (code, cursor, etc)</td>
                   </tr>
-                   <tr className="hover:bg-white/5 transition-colors">
+                  <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-4 text-zinc-300 font-mono text-sm">shouldTag</td>
                     <td className="p-4 text-vite-dim text-sm text-xs">(node) =&gt; boolean</td>
                     <td className="p-4 text-zinc-400 font-mono text-sm">() =&gt; true</td>
-                     <td className="p-4 text-zinc-400 text-sm">Custom filter logic</td>
+                    <td className="p-4 text-zinc-400 text-sm">Custom filter logic</td>
                   </tr>
-                   <tr className="hover:bg-white/5 transition-colors">
+                  <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-4 text-zinc-300 font-mono text-sm">openInEditor</td>
                     <td className="p-4 text-vite-dim text-sm text-xs">(path, line) =&gt; void</td>
                     <td className="p-4 text-zinc-400 font-mono text-sm">undefined</td>
-                     <td className="p-4 text-zinc-400 text-sm">Custom editor callback</td>
+                    <td className="p-4 text-zinc-400 text-sm">Custom editor callback</td>
                   </tr>
                 </tbody>
               </table>
@@ -176,7 +196,7 @@ export default defineConfig({
         );
       case 'Advanced':
         return (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
@@ -201,7 +221,7 @@ export default defineConfig({
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-{`import { defineConfig } from 'vite';
+                      {`import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';`}
                     </SyntaxHighlighter>
                   </div>
@@ -213,7 +233,7 @@ import react from '@vitejs/plugin-react';`}
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-{`import { componentRefTagger } from 'vite-plugin-component-ref';`}
+                      {`import { componentRefTagger } from 'vite-plugin-component-ref';`}
                     </SyntaxHighlighter>
                   </div>
 
@@ -224,12 +244,11 @@ import react from '@vitejs/plugin-react';`}
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-{`
+                      {`
 export default defineConfig({
   plugins: [`}
                     </SyntaxHighlighter>
                   </div>
-
                   {/* Chunk 4: componentRefTagger config (Highlight) */}
                   <div className="font-bold relative z-10">
                     <SyntaxHighlighter
@@ -237,8 +256,7 @@ export default defineConfig({
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-{`    componentRefTagger({
-   
+                      {`    componentRefTagger({
       prefix: "data-ref",
       enabled: true,
       basePath: "src",
@@ -263,7 +281,7 @@ export default defineConfig({
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-{`    react(),
+                      {`    react(),
   ],
 });`}
                     </SyntaxHighlighter>
@@ -274,7 +292,7 @@ export default defineConfig({
 
             <h3 className="text-xl font-bold mb-4 mt-12 text-white tracking-tight">Team Collaboration (Environment Overrides)</h3>
             <p className="text-vite-dim mb-6">Developers can override the project-wide editor setting by adding a variable to their <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-yellow-200">.env.local</code> or <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-yellow-200">.env</code>:</p>
-            
+
             <div className="bg-[#0e0e10] border border-white/10 rounded-xl overflow-hidden shadow-2xl">
               <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/5 bg-[#141416]">
                 <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
@@ -288,7 +306,7 @@ export default defineConfig({
                   style={vscDarkPlus}
                   customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                 >
-{`COMPONENT_REF_EDITOR=cursor`}
+                  {`COMPONENT_REF_EDITOR=cursor`}
                 </SyntaxHighlighter>
               </div>
             </div>
@@ -299,27 +317,35 @@ export default defineConfig({
 
   return (
     <section id="docs" className="py-20 md:py-32 relative">
-       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-3xl overflow-hidden flex flex-col md:flex-row min-h-[600px] shadow-2xl shadow-black/50">
           <div className="w-full md:w-[280px] bg-zinc-900/60 border-b md:border-b-0 md:border-r border-white/5 p-4 md:p-6 flex flex-row md:flex-col gap-1 overflow-x-auto scrollbar-hide">
             <h4 className="hidden md:block text-xs font-semibold text-zinc-500 uppercase tracking-widest px-4 mb-4 mt-2">Documentation</h4>
-            {['Setup', 'Config', 'Advanced'].map((tab) => (
-              <button 
-                key={tab}
-                className={`text-left px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 cursor-pointer border-none flex items-center justify-between group whitespace-nowrap flex-shrink-0
-                  ${activeTab === tab 
-                    ? 'bg-vite-purple/10 text-vite-purple' 
-                    : 'bg-transparent text-zinc-400 hover:bg-white/5 hover:text-white'
-                  }`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab}
-                {activeTab === tab && <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-vite-purple shadow-[0_0_8px_rgba(189,52,254,0.5)]"></div>}
-              </button>
-            ))}
+            {['Setup', 'Config', 'Advanced'].map((tab) => {
+              const colors = tabColors[tab];
+              return (
+                <button
+                  key={tab}
+                  className={`text-left px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 cursor-pointer border-none flex items-center justify-between group whitespace-nowrap flex-shrink-0
+                    ${activeTab === tab
+                      ? `${colors.bg} ${colors.text}`
+                      : 'bg-transparent text-zinc-400 hover:bg-white/5 hover:text-white'
+                    }`}
+                  onClick={() => setActiveTab(tab)}
+                >
+                  {tab}
+                  {activeTab === tab && (
+                    <div
+                      className={`hidden md:block w-1.5 h-1.5 rounded-full ${colors.dot}`}
+                      style={{ boxShadow: `0 0 8px ${colors.glow}` }}
+                    ></div>
+                  )}
+                </button>
+              );
+            })}
           </div>
-          
+
           <div className="flex-1 p-6 md:p-12 relative bg-zinc-900/20 w-full overflow-hidden">
             <AnimatePresence mode="wait">
               {renderDocsContent()}
@@ -327,7 +353,7 @@ export default defineConfig({
           </div>
         </div>
       </div>
-       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
     </section>
   );
 };
