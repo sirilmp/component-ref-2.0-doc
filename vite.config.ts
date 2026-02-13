@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { componentRefTagger } from 'vite-plugin-component-ref';
+import { vpcrTagger } from 'vpcr'
 
 
 export default defineConfig({
   plugins: [
-    componentRefTagger({
+   vpcrTagger({
       editor: 'antigravity', // Automatically handles line-positioning flags
       include: [/\.tsx?$/],
     }),
