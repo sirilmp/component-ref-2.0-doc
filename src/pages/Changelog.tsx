@@ -40,7 +40,7 @@ const Changelog = () => {
             <span className="text-sm font-medium">Back to Home</span>
           </Link>
           <a
-            href="https://www.npmjs.com/package/vite-plugin-component-ref"
+            href="https://www.npmjs.com/package/vpcr"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-zinc-500 hover:text-white transition-colors no-underline"
@@ -61,7 +61,7 @@ const Changelog = () => {
         >
           <div className="flex items-center gap-3 mb-4">
             <img src="/logo.png" alt="component-ref-tagger" className="w-10 h-10 rounded-xl" />
-            <span className="text-zinc-500 text-sm font-mono">vite-plugin-component-ref</span>
+            <span className="text-zinc-500 text-sm font-mono">vpcr</span>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-white mb-4">
             Changelog
