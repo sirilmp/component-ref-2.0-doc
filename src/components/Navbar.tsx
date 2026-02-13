@@ -29,14 +29,14 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-center pointer-events-none">
-        <div 
+        <div
           className={`pointer-events-auto w-full max-w-[1100px] flex justify-between items-center transition-all duration-300 rounded-full border border-white/5 shadow-2xl backdrop-blur-md relative z-50
           ${scrolled || isOpen
-            ? 'bg-zinc-900/90 py-2.5 px-6 shadow-black/50 border-white/10' 
-            : 'bg-zinc-900/50 py-3 px-6'
-          }`}
+              ? 'bg-zinc-900/90 py-2.5 px-6 shadow-black/50 border-white/10'
+              : 'bg-zinc-900/50 py-3 px-6'
+            }`}
         >
-          <div 
+          <div
             className="flex items-center gap-3 font-bold text-lg cursor-pointer hover:opacity-80 transition-opacity"
             onClick={() => {
               setIsOpen(false);
@@ -51,7 +51,7 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
 
           <div className="hidden md:flex items-center gap-1">
             {['Why?', 'Features', 'Docs'].map((item) => (
-              <button 
+              <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace('?', ''))}
                 className="px-4 py-2 rounded-full text-vite-dim hover:text-white hover:bg-white/5 transition-all duration-200 font-medium text-sm bg-transparent border-none cursor-pointer"
@@ -59,7 +59,7 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
                 {item}
               </button>
             ))}
-            <Link 
+            <Link
               to="/changelog"
               className="px-4 py-2 rounded-full text-vite-dim hover:text-white hover:bg-white/5 transition-all duration-200 font-medium text-sm no-underline"
             >
@@ -69,9 +69,9 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
 
           {/* Icon links — visible on all screen sizes */}
           <div className="hidden md:flex items-center gap-1">
-            <a 
-              href="https://www.npmjs.com/package/vite-plugin-component-ref" 
-              target="_blank" 
+            <a
+              href="https://www.npmjs.com/package/vpcr"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-vite-dim hover:text-white transition-colors p-2"
               aria-label="NPM Package"
@@ -83,10 +83,10 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
                 <line x1="12" y1="22.08" x2="12" y2="12"></line>
               </svg>
             </a>
-            
-            <a 
-              href="https://github.com/sirilmp/vite-plugin-component-ref-2.0" 
-              target="_blank" 
+
+            <a
+              href="https://github.com/sirilmp/vpcr-2.0"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-vite-dim hover:text-white transition-colors p-2"
             >
@@ -95,7 +95,7 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
           </div>
 
           {/* Double-line Hamburger Button */}
-          <button 
+          <button
             className="md:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5 cursor-pointer bg-white/5 rounded-full hover:bg-white/10 transition-colors border-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
@@ -139,7 +139,7 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-black/60 pt-32 px-6 pb-6 flex flex-col md:hidden"
           >
-            <motion.div 
+            <motion.div
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
@@ -147,7 +147,7 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
               className="flex flex-col gap-2 p-4 bg-zinc-900/90 border border-white/10 rounded-3xl"
             >
               {['Why?', 'Features', 'Docs'].map((item, i) => (
-                <motion.button 
+                <motion.button
                   key={item}
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
@@ -166,7 +166,7 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.25 }}
               >
-                <Link 
+                <Link
                   to="/changelog"
                   onClick={() => setIsOpen(false)}
                   className="p-4 text-left rounded-xl text-white hover:bg-white/10 transition-all duration-200 font-semibold text-lg flex justify-between items-center no-underline block"
@@ -177,12 +177,12 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
                   </span>
                 </Link>
               </motion.div>
-              
+
               <div className="h-px bg-white/10 my-2"></div>
-              
-              <a 
-                href="https://www.npmjs.com/package/vite-plugin-component-ref" 
-                target="_blank" 
+
+              <a
+                href="https://www.npmjs.com/package/vpcr"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 text-left rounded-xl text-white hover:bg-white/10 transition-all duration-200 font-semibold text-lg flex items-center gap-3 no-underline"
               >
@@ -194,9 +194,9 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
                 </svg>
                 <span>npm</span>
               </a>
-              <a 
-                href="https://github.com/sirilmp/vite-plugin-component-ref-2.0r" 
-                target="_blank" 
+              <a
+                href="https://github.com/sirilmp/vpcr-2.0r"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 text-left rounded-xl text-white hover:bg-white/10 transition-all duration-200 font-semibold text-lg flex items-center gap-3 no-underline"
               >

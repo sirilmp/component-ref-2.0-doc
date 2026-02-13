@@ -1,65 +1,52 @@
 [
   {
-    "version": "1.0.2",
-    "date": "February 12, 2026",
-    "tag": "Latest",
-    "entries": [
-      {
-        "type": "changed",
-        "text": "Configured plugin to only run in development mode (apply: 'serve')"
-      },
-      {
-        "type": "improved",
-        "text": "Optimized build process by skipping plugin execution in production"
-      }
-    ]
-  },
-  {
-    "version": "1.0.1",
-    "date": "February 12, 2026",
-    "entries": [
-      {
-        "type": "fixed",
-        "text": "Updated peer dependencies to support Vite 5 and 6"
-      }
-    ]
-  },
-  {
     "version": "1.0.0",
-    "date": "February 12, 2026",
+    "date": "February 13, 2026",
     "tag": "Initial Release",
     "entries": [
       {
         "type": "added",
-        "text": "Automatic JSX element tagging with ref-id, ref-component, ref-line, ref-path, and ref-file"
+        "text": "Initial release of `vpcr`."
       },
       {
         "type": "added",
-        "text": "Alt + Click functionality in the browser to open source files in the IDE"
+        "text": "Automatic JSX element tagging with `ref-id`, `ref-component`, `ref-line`, `ref-path`, and `ref-file`."
       },
       {
         "type": "added",
-        "text": "Smart editor defaults for antigravity, cursor, and vscode"
+        "text": "\"Alt + Click\" functionality in the browser to open source files in the IDE."
       },
       {
         "type": "added",
-        "text": "Support for custom command templates with {file} and {line} placeholders"
+        "text": "Smart editor defaults for `antigravity`, `cursor`, and `vscode`."
       },
       {
         "type": "added",
-        "text": "Environment variable override (COMPONENT_REF_EDITOR) for team collaboration"
+        "text": "Support for custom command templates with `{file}` and `{line}` placeholders."
       },
       {
         "type": "added",
-        "text": "Advanced filtering and configuration options (basePath, include, exclude, shouldTag)"
+        "text": "Environment variable override (`COMPONENT_REF_EDITOR`) for team collaboration."
       },
       {
         "type": "added",
-        "text": "Custom openInEditor callback for advanced integrations"
+        "text": "Advanced filtering and configuration options (`basePath`, `include`, `exclude`, `shouldTag`)."
       },
       {
         "type": "added",
-        "text": "Production build safety (automatic disable)"
+        "text": "Custom `openInEditor` callback for advanced integrations."
+      },
+      {
+        "type": "added",
+        "text": "Production build safety (automatic disable)."
+      },
+      {
+        "type": "added",
+        "text": "Configured plugin to only run in development mode (`apply: 'serve'`)."
+      },
+      {
+        "type": "added",
+        "text": "Optimized build process by skipping plugin execution in production"
       }
     ]
   }

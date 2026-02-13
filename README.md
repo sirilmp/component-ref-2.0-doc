@@ -1,6 +1,6 @@
 # Documentation Website
 
-This is the source code for the premium documentation website of `vite-plugin-component-ref`.
+This is the source code for the premium documentation website of `vpcr`.
 
 ## Development
 
