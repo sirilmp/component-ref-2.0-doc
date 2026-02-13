@@ -195,7 +195,7 @@ const Navbar = ({ scrolled, scrollToSection }: NavbarProps) => {
                 <span>npm</span>
               </a>
               <a
-                href="https://github.com/sirilmp/vpcr-2.0r"
+                href="https://github.com/sirilmp/vpcr-2.0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 text-left rounded-xl text-white hover:bg-white/10 transition-all duration-200 font-semibold text-lg flex items-center gap-3 no-underline"
