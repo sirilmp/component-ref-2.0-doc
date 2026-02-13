@@ -5,9 +5,20 @@ import { vpcrTagger } from 'vpcr'
 
 export default defineConfig({
   plugins: [
-   vpcrTagger({
-      editor: 'antigravity', // Automatically handles line-positioning flags
-      include: [/\.tsx?$/],
+vpcrTagger({
+      prefix: "data-ref",
+      enabled: true,
+      basePath: "src",
+      editor: "code", // 'cursor' | 'vscode' | 'webstorm'
+      include: [".tsx", ".jsx"],
+      exclude: ["node_modules", "main.tsx"],
+      attributes: ['id', 'name', 'path', 'line', 'file'],
+      shouldTag: (componentName, filePath) => {
+        return !componentName.startsWith('Internal');
+      },
+      // openInEditor: (filePath, line) => {
+      //   console.log(`Opening ${filePath} at line ${line}`);
+      // }
     }),
     react()
   ],
