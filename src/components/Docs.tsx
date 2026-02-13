@@ -69,7 +69,7 @@ import react from '@vitejs/plugin-react';`}
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-                      {`import { componentRefTagger } from 'vite-plugin-component-ref';`}
+                      {`import { vpcrTagger } from 'vpcr';`}
                     </SyntaxHighlighter>
                   </div>
 
@@ -92,7 +92,7 @@ export default defineConfig({
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-                      {`    componentRefTagger(),`}
+                      {`    vpcrTagger(),`}
                     </SyntaxHighlighter>
                   </div>
 
@@ -233,7 +233,7 @@ import react from '@vitejs/plugin-react';`}
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-                      {`import { componentRefTagger } from 'vite-plugin-component-ref';`}
+                      {`import { vpcrTagger } from 'vpcr';`}
                     </SyntaxHighlighter>
                   </div>
 
@@ -249,14 +249,14 @@ export default defineConfig({
   plugins: [`}
                     </SyntaxHighlighter>
                   </div>
-                  {/* Chunk 4: componentRefTagger config (Highlight) */}
+                  {/* Chunk 4: vpcrTagger config (Highlight) */}
                   <div className="font-bold relative z-10">
                     <SyntaxHighlighter
                       language="typescript"
                       style={vscDarkPlus}
                       customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                     >
-                      {`    componentRefTagger({
+                      {`    vpcrTagger({
       prefix: "data-ref",
       enabled: true,
       basePath: "src",

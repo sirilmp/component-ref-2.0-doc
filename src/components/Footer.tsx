@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex items-center gap-3 font-bold text-sm text-zinc-600">
           <img src="/logo.png" alt="component-ref-tagger" className="w-6 h-6 rounded opacity-30" />
           <span className="text-zinc-600 font-medium">
-            Component Ref
+            Vpcr
           </span>
         </div>
         <p className="text-zinc-600 text-sm flex items-center gap-1">
