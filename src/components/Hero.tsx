@@ -5,6 +5,7 @@ import { ArrowRight, Terminal, Check, Copy, ChevronRight, Play } from 'lucide-re
 import { Link } from 'react-router-dom';
 import VideoModal from './VideoModal';
 import changelogData from '../data/changelogs.json';
+import demoVideo from '../assets/vpcr-demo.mp4';
 
 interface HeroProps {
   scrollToSection: (id: string) => void;
@@ -165,7 +166,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
 
         </motion.div>
       </div>
-      <VideoModal isOpen={showModal} onClose={() => setShowModal(false)} />
+      <VideoModal isOpen={showModal} onClose={() => setShowModal(false)} videoUrl={demoVideo} />
     </section>
   );
 };
