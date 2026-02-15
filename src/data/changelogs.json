@@ -1,5 +1,16 @@
 [
   {
+    "version": "1.0.4",
+    "date": "February 15, 2026",
+    "tag": "Latest",
+    "entries": [
+      {
+        "type": "added",
+        "text": "Added visual feedback on Alt/Option hold: highlights hovered component and shows tooltip with component name, file path, and line number."
+      }
+    ]
+  },
+  {
     "version": "1.0.3",
     "date": "February 15, 2026",
     "tag": "Update",

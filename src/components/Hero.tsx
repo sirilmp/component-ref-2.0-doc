@@ -1,8 +1,9 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Terminal, Check, Copy, ChevronRight } from 'lucide-react';
+import { ArrowRight, Terminal, Check, Copy, ChevronRight, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import VideoModal from './VideoModal';
 import changelogData from '../data/changelogs.json';
 
 interface HeroProps {
@@ -13,6 +14,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
   const [copied, setCopied] = useState(false);
   const [packageManager, setPackageManager] = useState('npm');
   const [clickedAltClick, setClickedAltClick] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const latestVersion = changelogData[0]?.version || '1.0.1';
 
@@ -53,6 +55,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
+            className="flex items-center gap-3"
           >
             <Link
               to="/changelog"
@@ -63,6 +66,14 @@ const Hero = ({ scrollToSection }: HeroProps) => {
                 v{latestVersion} is available <ChevronRight size={14} className="text-zinc-600 group-hover:text-zinc-400" />
               </span>
             </Link>
+
+            <button
+              onClick={() => setShowModal(true)}
+              className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 backdrop-blur border border-white/10 rounded-full px-4 py-1.5 text-sm mb-10 cursor-pointer transition-colors group text-zinc-300 hover:text-white"
+            >
+              <Play size={12} className="fill-current" />
+              <span>How it works?</span>
+            </button>
           </motion.div>
 
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter text-white drop-shadow-sm">
@@ -154,6 +165,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
 
         </motion.div>
       </div>
+      <VideoModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </section>
   );
 };
