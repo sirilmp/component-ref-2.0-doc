@@ -1,5 +1,6 @@
 
 import { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Play, Pause, Volume2, VolumeX, Maximize, Minimize } from 'lucide-react';
 
@@ -107,7 +108,7 @@ const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
         return `${minutes}:${seconds.toString().padStart(2, '0')}`;
     };
 
-    return (
+    return createPortal(
         <AnimatePresence>
             {isOpen && (
                 <div
@@ -254,7 +255,8 @@ const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
                     </motion.div>
                 </div>
             )}
-        </AnimatePresence>
+        </AnimatePresence>,
+        document.body
     );
 };
 
