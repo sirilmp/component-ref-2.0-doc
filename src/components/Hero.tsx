@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Terminal, Check, Copy, ChevronRight, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import VideoModal from './VideoModal';
+import VideoLibraryModal from './VideoLibraryModal';
 import changelogData from '../data/changelogs.json';
-import demoVideo from '../assets/vpcr-demo.mp4';
+
 
 interface HeroProps {
   scrollToSection: (id: string) => void;
@@ -166,7 +166,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
 
         </motion.div>
       </div>
-      <VideoModal isOpen={showModal} onClose={() => setShowModal(false)} videoUrl={demoVideo} />
+      <VideoLibraryModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </section>
   );
 };

@@ -1,0 +1,14 @@
+{
+  "libraryTitle": "Video Library",
+  "libraryDescription": "Explore our collection of videos to learn more about VPCR.",
+  "videos": [
+    {
+        "id": "installation",
+        "title": "Installation Guide",
+        "description": "Learn how to install and configure VPCR in your React project.",
+        "duration": "2:11",
+        "videoUrl": "/videos/vpcr-basic-config.mp4",
+        "thumbnailUrl": "/banner.png"
+      }
+  ]
+}
