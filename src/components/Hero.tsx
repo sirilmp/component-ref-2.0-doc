@@ -56,7 +56,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-3 flex-wrap justify-center"
+            className="flex items-center gap-3 flex-col md:flex-row  justify-center"
           >
             <Link
               to="/changelog"
