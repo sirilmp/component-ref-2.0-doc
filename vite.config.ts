@@ -22,4 +22,7 @@ vpcrTagger({
     }),
     react()
   ],
+  server:{
+    port: 4001
+  }
 })
