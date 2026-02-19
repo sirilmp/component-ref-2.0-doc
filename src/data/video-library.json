@@ -9,6 +9,14 @@
         "duration": "2:11",
         "videoUrl": "/videos/vpcr-basic-config.mp4",
         "thumbnailUrl": "/banner.png"
+      },
+      {
+        "id": "env-config",
+        "title": "Editor Configuration",
+        "description": "Learn how to configure your preferred editor (VS Code, Cursor, etc.) using environment variables.",
+        "duration": "1:30",
+        "videoUrl": "/videos/env_config.mp4",
+        "thumbnailUrl": "/banner.png"
       }
   ]
 }

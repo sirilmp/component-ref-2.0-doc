@@ -2138,9 +2138,9 @@ keyv@^4.5.3:
     json-buffer "3.0.1"
 
 launch-editor@^2.12.0:
-  version "2.12.0"
-  resolved "https://registry.npmjs.org/launch-editor/-/launch-editor-2.12.0.tgz"
-  integrity sha512-giOHXoOtifjdHqUamwKq6c49GzBdLjvxrd2D+Q4V6uOHopJv7p9VJxikDsQ/CBXZbEITgUqSVHXLTG3VhPP1Dg==
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/launch-editor/-/launch-editor-2.13.0.tgz#6ff3d88d53ef3148d2145350b54854f9f2551ce1"
+  integrity sha512-u+9asUHMJ99lA15VRMXw5XKfySFR9dGXwgsgS14YTbUq3GITP58mIM32At90P5fZ+MUId5Yw+IwI/yKub7jnCQ==
   dependencies:
     picocolors "^1.1.1"
     shell-quote "^1.8.3"
@@ -2206,6 +2206,11 @@ lucide-react@^0.344.0:
   version "0.344.0"
   resolved "https://registry.npmjs.org/lucide-react/-/lucide-react-0.344.0.tgz"
   integrity sha512-6YyBnn91GB45VuVT96bYCOKElbJzUHqp65vX8cDcu55MQL9T969v4dhGClpljamuI/+KMO9P6w9Acq1CVQGvIQ==
+
+lucide-react@^0.564.0:
+  version "0.564.0"
+  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-0.564.0.tgz#128013d180343927192f6b0dc4d9beb778afc33b"
+  integrity sha512-JJ8GVTQqFwuliifD48U6+h7DXEHdkhJ/E87kksGByII3qHxtPciVb8T8woQONHBQgHVOl7rSMrrip3SeVNy7Fg==
 
 math-intrinsics@^1.1.0:
   version "1.1.0"
@@ -2819,7 +2824,7 @@ shebang-regex@^3.0.0:
 
 shell-quote@^1.8.3:
   version "1.8.3"
-  resolved "https://registry.npmjs.org/shell-quote/-/shell-quote-1.8.3.tgz"
+  resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.8.3.tgz#55e40ef33cf5c689902353a3d8cd1a6725f08b4b"
   integrity sha512-ObmnIF4hXNg1BqhnHmgbDETF8dLPCggZWBjkQfhZpbszZnYur5DUljTcCHii5LC3J5E0yeO/1LIMyH+UvHQgyw==
 
 side-channel-list@^1.0.0:
@@ -3159,16 +3164,17 @@ vite@^6.0.0:
   optionalDependencies:
     fsevents "~2.3.3"
 
-vpcr@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/vpcr/-/vpcr-1.0.2.tgz#4618909e2a2159ebb26285404c549e3067ada40c"
-  integrity sha512-xufi23eNp6nmLvfpukzklj+m/oJnRX4C6Bk9fezEm3bs4xkDkXgT9eFkk/D96eAVTN3VXUOuMJPVeRzjosLYOQ==
+vpcr@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/vpcr/-/vpcr-1.0.7.tgz#a0cf2accd37942671803416e8e342238a4c2dd2c"
+  integrity sha512-xEWrAB4V8j7M78YCKJv9a8IznkVI1Ad/sWPR8D1txnHMN+Mn6QEymgKMKXBqor3DXSKGZr/fbRkCtAcEwyeXaw==
   dependencies:
     "@babel/generator" "^7.23.0"
     "@babel/parser" "^7.23.0"
     "@babel/traverse" "^7.23.0"
     "@babel/types" "^7.23.0"
     launch-editor "^2.12.0"
+    lucide-react "^0.564.0"
 
 which-boxed-primitive@^1.1.0, which-boxed-primitive@^1.1.1:
   version "1.1.1"

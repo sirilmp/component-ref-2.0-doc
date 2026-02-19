@@ -12,7 +12,7 @@ vpcrTagger({
       editor: "code", // 'cursor' | 'vscode' | 'webstorm'
       include: [".tsx", ".jsx"],
       exclude: ["node_modules", "main.tsx"],
-      attributes: ['id', 'name', 'path', 'line', 'file'],
+      attributes: ['id', 'name', 'path', 'file', 'component'],
       shouldTag: (componentName, filePath) => {
         return !componentName.startsWith('Internal');
       },

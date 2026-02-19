@@ -1,4 +1,20 @@
 [
+
+  {
+    "version": "1.0.8",
+    "date": "February 19, 2026",
+    "tag": "Update",
+    "entries": [
+      {
+        "type": "added",
+        "text": "Added `enableHighlighter` option to `PluginOptions` (default: `true`)."
+      },
+      {
+        "type": "added",
+        "text": "Improved tooltip to show component name even if not explicitly added to attributes."
+      }
+    ]
+  },
   {
     "version": "1.0.7",
     "date": "February 17, 2026",

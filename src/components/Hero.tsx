@@ -56,11 +56,11 @@ const Hero = ({ scrollToSection }: HeroProps) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-3"
+            className="flex items-center gap-3 flex-wrap justify-center"
           >
             <Link
               to="/changelog"
-              className="inline-flex items-center gap-2 bg-zinc-900/80 backdrop-blur border border-zinc-800 rounded-full pl-2 pr-4 py-1.5 text-sm mb-10 cursor-pointer hover:border-zinc-700 transition-colors group no-underline"
+              className="inline-flex items-center gap-2 bg-zinc-900/80 backdrop-blur border border-zinc-800 rounded-full pl-2 pr-4 py-1.5 text-sm md:mb-10 cursor-pointer hover:border-zinc-700 transition-colors group no-underline"
             >
               <span className="bg-white text-black px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider">New</span>
               <span className="text-zinc-400 group-hover:text-zinc-200 transition-colors flex items-center gap-1">
@@ -166,7 +166,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
 
         </motion.div>
       </div>
-      <VideoLibraryModal isOpen={showModal} onClose={() => setShowModal(false)} />
+      {showModal && <VideoLibraryModal isOpen={showModal} onClose={() => setShowModal(false)} />}
     </section>
   );
 };
