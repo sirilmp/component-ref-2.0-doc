@@ -306,7 +306,7 @@ export default defineConfig({
                   style={vscDarkPlus}
                   customStyle={{ margin: 0, padding: 0, background: 'transparent', overflow: 'visible' }}
                 >
-                  {`COMPONENT_REF_EDITOR=cursor`}
+                  {`VPCR_EDITOR=cursor`}
                 </SyntaxHighlighter>
               </div>
             </div>
