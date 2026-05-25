@@ -14,7 +14,7 @@
       },
       {
         "type": "added",
-        "text": "Smart IDE Auto-Detection: Automatically identifies whether you are running the project inside VS Code, Cursor, or Antigravity IDE, opening code files at the exact line instantly."
+        "text": "Smart IDE Auto-Detection: Automatically identifies whether you are running the project inside VS Code, Cursor, Antigravity IDE or any other code editor, opening code files at the exact line instantly."
       }
     ]
   },

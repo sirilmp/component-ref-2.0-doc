@@ -33,7 +33,7 @@ const Features = () => {
           <FeatureCard
             icon={Zap}
             title="Smart IDE Auto-Detection"
-            description="Zero configuration needed! Automatically identifies if you are running VS Code, Cursor, or Antigravity IDE and opens your file instantly."
+            description="Zero configuration needed! Automatically identifies if you are running VS Code, Cursor, Antigravity IDE or any other code editor and opens your file instantly."
             delay={0.2}
             spotlightColor="rgba(52, 211, 153, 0.1)"
             iconColor="text-emerald-400"

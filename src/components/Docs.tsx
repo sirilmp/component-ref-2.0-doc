@@ -291,7 +291,7 @@ export default defineConfig({
             </div>
 
             <h3 className="text-xl font-bold mb-4 mt-12 text-white tracking-tight">Team Collaboration (Environment Overrides)</h3>
-            <p className="text-vite-dim mb-6">Developers can override the project-wide editor setting by adding a variable to their <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-yellow-200">.env.local</code> or <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-yellow-200">.env</code>:</p>
+            <p className="text-vite-dim mb-6">With the release of v1.1.0, VPCR automatically detects your running IDE (VS Code, Cursor, Antigravity IDE or any other) so manual editor configuration or team environment overrides are no longer required. However, developers can still specify a manual override if needed by adding an environment variable to their <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-yellow-200">.env.local</code> or <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-yellow-200">.env</code>:</p>
 
             <div className="bg-[#0e0e10] border border-white/10 rounded-xl overflow-hidden shadow-2xl">
               <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/5 bg-[#141416]">

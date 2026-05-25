@@ -37,7 +37,7 @@ const WhySection = () => {
             {
               icon: MousePointerClick,
               title: 'Instant "Click-to-Code" Navigation',
-              desc: "Jump from your browser straight to the exact source file in milliseconds. Hold Alt + Click on any UI element, or toggle the new In-Page Component Inspector floating button. Smart IDE Auto-Detection automatically identifies VS Code, Cursor, or Antigravity IDE to open the exact file and line instantly.",
+              desc: "Jump from your browser straight to the exact source file in milliseconds. Hold Alt + Click on any UI element, or toggle the new In-Page Component Inspector floating button. Smart IDE Auto-Detection automatically identifies VS Code, Cursor, Antigravity IDE or any other code editor to open the exact file and line instantly.",
               gradient: "from-cyan-500/20 via-cyan-500/5 to-transparent",
               iconBg: "bg-gradient-to-br from-cyan-500/20 to-cyan-600/10",
               iconColor: "text-cyan-400",
