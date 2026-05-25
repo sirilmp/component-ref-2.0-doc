@@ -86,7 +86,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed px-4 font-normal tracking-wide">
+          <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto mb-12 leading-relaxed px-4 font-normal tracking-wide">
             A powerful Vite plugin that automatically tags React components, enabling seamless
             <span
               onClick={handleAltClickDemo}
@@ -94,7 +94,14 @@ const Hero = ({ scrollToSection }: HeroProps) => {
             >
               Alt + Click
             </span>
-            navigation directly to your source code.
+            navigation or a click-to-code
+            <span
+              onClick={() => scrollToSection('features')}
+              className="mx-1.5 align-baseline inline-flex items-center justify-center px-2 py-0.5 rounded-md bg-cyan-950 border border-cyan-800 text-cyan-400 font-sans text-sm shadow-sm cursor-pointer hover:bg-cyan-900 hover:border-cyan-700 transition-all active:scale-95 outline-none font-semibold"
+            >
+              In-Page Inspector
+            </span>
+            overlay directly to your source code.
           </p>
 
           {/* Action Buttons */}

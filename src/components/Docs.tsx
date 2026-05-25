@@ -174,8 +174,8 @@ export default defineConfig({
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-4 text-zinc-300 font-mono text-sm">editor</td>
                     <td className="p-4 text-vite-dim text-sm">string</td>
-                    <td className="p-4 text-zinc-400 font-mono text-sm">"code"</td>
-                    <td className="p-4 text-zinc-400 text-sm">Preferred editor (code, cursor, etc)</td>
+                    <td className="p-4 text-zinc-400 font-mono text-sm">undefined</td>
+                    <td className="p-4 text-zinc-400 text-sm">Preferred editor. If omitted, VPCR automatically detects Cursor, VS Code, or Antigravity IDE zero-config!</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-4 text-zinc-300 font-mono text-sm">shouldTag</td>

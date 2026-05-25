@@ -52,7 +52,7 @@ const WhyCard = ({ index, item }: WhyCardProps) => {
                         {item.title}
                     </h3>
                     <p className="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">
-                        {item.desc.split(/(Alt \+ Click|vite\.config\.ts|VS Code|Cursor|Elements|DevTools|data-ref-component|data-ref-file|data-ref-line)/g).map((part, i) => {
+                        {item.desc.split(/(Alt \+ Click|vite\.config\.ts|VS Code|Cursor|Elements|DevTools|data-ref-component|data-ref-file|data-ref-line|In-Page Component Inspector|Smart IDE Auto-Detection|Antigravity IDE)/g).map((part, i) => {
                             if (part === 'Alt + Click') {
                                 return (
                                     <code
@@ -64,7 +64,7 @@ const WhyCard = ({ index, item }: WhyCardProps) => {
                                     </code>
                                 );
                             }
-                            return ['vite.config.ts', 'VS Code', 'Cursor', 'Elements', 'DevTools', 'data-ref-component', 'data-ref-file', 'data-ref-line'].includes(part)
+                            return ['vite.config.ts', 'VS Code', 'Cursor', 'Elements', 'DevTools', 'data-ref-component', 'data-ref-file', 'data-ref-line', 'In-Page Component Inspector', 'Smart IDE Auto-Detection', 'Antigravity IDE'].includes(part)
                                 ? <code key={i} className="text-zinc-100 font-mono text-xs bg-white/5 px-1.5 py-0.5 rounded">{part}</code>
                                 : part;
                         })}
