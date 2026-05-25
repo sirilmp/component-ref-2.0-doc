@@ -1,8 +1,19 @@
 [
   {
+    "version": "1.1.1",
+    "date": "May 25, 2026",
+    "tag": "Latest",
+    "entries": [
+      {
+        "type": "added",
+        "text": "Proactive Editor Pre-Scanning: Spawns a background process scanner silently at server startup to pre-resolve and cache the active editor path, completely eliminating the Windows process/registry scanning delay on first click."
+      }
+    ]
+  },
+  {
     "version": "1.1.0",
     "date": "May 24, 2026",
-    "tag": "Latest",
+    "tag": "Update",
     "entries": [
       {
         "type": "added",
